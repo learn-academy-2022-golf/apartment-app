@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class ApartmentShow extends Component {
   render() {
     return (
-      <div>ApartmentShow</div>
+      <h3>ApartmentShow</h3>
     )
   }
 }
