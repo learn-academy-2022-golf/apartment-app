@@ -26,7 +26,7 @@ $ rails generate controller Home
 
 ## 🛠 Configurations
 
-#### Devise Config
+### Devise Config
 **config/environments/development.rb**
 ```ruby
 This line added:
@@ -53,7 +53,7 @@ File added in app/views/home called index.html.erb
 } %>
 ```
 
-#### React in Rails Config
+### React in Rails Config
 
 **app/views/layouts/application.html.erb**
 ```ruby
@@ -70,7 +70,7 @@ get '*path', to: 'home#index', constraints: ->(request){ request.format.html? }
 root 'home#index'
 ```
 
-#### React Routing Config
+### React Routing Config
 ```bash
 yarn add react-router-dom@5.3.0
 ```
@@ -84,7 +84,7 @@ import {
 } from 'react-router-dom'
 ```
 
-#### Reactstrap Config
+### Reactstrap Config
 ```bash
 bundle add bootstrap
 mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
@@ -155,33 +155,26 @@ rspec spec/
 ### Apartment Data Specs
 Part of your responsibility will be to build out robust tests both for models and for requests. 
 Tests you will need are:  
+
 REQUEST: 
-- for many apartments
-- for a single apartment
-- for authorized apartments
-- to make a new apartment
-- for error when when you make a new an apartment without every field
-- for error when you try to make an apartment without being logged in
-- to take an existing apartment and change its values
-- for error when you try to edit an apartment that doesn't belong to you
-- to get rid of an apartment from the database
-- for error when you try to to get rid of an apartment that doesn't belong to you
+- to ensure a user can see all apartments
+- to ensure a user can see all apartments that belong to them
+- to ensure a user can make a new apartment
+- to ensure a user can update an apartment
+- to ensure a user can remove an apartment
+- to ensure a user cannot make a new apartment with nil values
+- to ensure an error will be thrown if an unregistered user tried to make an apartment
+- to ensure an error will be thrown if a user tries to edit an apartment that doesn't belong to them
+- to ensure an error will be thrown if a user tries to delete an apartment that doesn't belong to them
 
 MODELS: 
-- for many apartments
-- for a single apartment
-- for authorized apartments
-- to make a new apartment
-- for error when when you make a new an apartment without every field
-- for error when when you make a new an apartment that already exists in the database
-- for error when you try to make an apartment without a user being associated with it 
-- to take an existing apartment and change its values
-- for error when you try to edit an apartment that doesn't belong to you
-- to get rid of an apartment from the database
-- for error when you try to to get rid of an apartment that doesn't belong to you
+- to ensure apartment is valid
+- to ensure a user cannot make a new apartment with nil values
+- to ensure a user cannot make a new apartment that already exists in the database
+- to ensure a user cannot update an apartment with nil values
+- to ensure a user cannot update another user's apartment
 
-
-**The following code will not work but is here to get your started**
+**The following code is a mock and does not work but is here to get your started.**
 ```ruby
 require 'rails_helper'
 
