@@ -1,4 +1,4 @@
-# Apartment App
+# 🏘 Apartment App
 This app has been created for you to mimic the feeling of entering into a developer role where there is established code that you have not created. This Apartment application has a few features that have been created for you and some key items that have been left totally untouched. Part of your job as a developer is to be able to pick up code that has already been created, understand what is going on with it, and continue the development of that code. 
 
 ## 👨‍💻 How We Got Here
