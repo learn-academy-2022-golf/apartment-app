@@ -1,38 +1,46 @@
-import React, { Component } from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import ApartmentIndex from './pages/ApartmentIndex'
-import ApartmentShow from './pages/ApartmentShow'
-import ApartmentNew from './pages/ApartmentNew'
-import ApartmentEdit from './pages/ApartmentEdit'
-import NotFound from './pages/NotFound'
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom'
+import React, { useState, useEffect } from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-class App extends Component {
-  render() {
-    return (
-      
-        <Router>
-          <Header {...this.props} />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/apartmentindex" component={ApartmentIndex} />
-            <Route path="/apartmentshow" component={ApartmentShow} />
-            <Route path="/apartmentnew" component={ApartmentNew} />
-            <Route path="/apartmentedit" component={ApartmentEdit} />
-            <Route component={NotFound}/>
-          </Switch>
-        </Router>
-        
-        
-  
-    )
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+
+import ApartmentEdit from "./pages/ApartmentEdit"
+import ApartmentIndex from "./pages/ApartmentIndex"
+import ApartmentNew from "./pages/ApartmentNew"
+import ApartmentShow from "./pages/ApartmentShow"
+import Home from "./pages/Home"
+import NotFound from "./pages/NotFound"
+
+const App = (props) => {
+  const [apartments, setApartments] = useState([])
+
+  useEffect(() => {
+    readApartments()
+  }, [])
+
+  const readApartments = () => {
+    fetch("/apartments")
+      .then((response) => response.json())
+      .then((payload) => {
+        setApartments(payload)
+      })
+      .catch((error) => console.log(error))
   }
+
+  return (
+    <BrowserRouter>
+      <Header {...props} />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/apartmentindex" element={<ApartmentIndex />} />
+        <Route path="/apartmentshow" element={<ApartmentShow />} />
+        <Route path="/apartmentnew" element={<ApartmentNew />} />
+        <Route path="/apartmentedit" element={<ApartmentEdit />} />
+        <Route element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  )
 }
 
 export default App

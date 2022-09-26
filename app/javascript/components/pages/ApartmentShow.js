@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from "react"
 
-export default class ApartmentShow extends Component {
-  render() {
-    return (
+const ApartmentShow = () => {
+  return (
+    <>
       <h3>ApartmentShow</h3>
-    )
-  }
+    </>
+  )
 }
+
+export default ApartmentShow
