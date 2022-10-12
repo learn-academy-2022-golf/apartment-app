@@ -39,6 +39,13 @@ jobs:
       # Add or replace test runners here
       - name: Run rspec tests
         run: bin/rake
+  jest-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install packages
+        run: yarn
       - name: Run jest tests
         run: yarn test
 
