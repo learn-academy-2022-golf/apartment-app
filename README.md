@@ -168,6 +168,20 @@ yarn test
 rspec spec/
 ```
 
+## 🧹 Linting
+
+To run the linter and find errors in React, run:
+
+```bash
+yarn eslint .
+```
+
+To run the linter and find errors in Rails, run:
+
+```bash
+standardrb
+```
+
 ### Apartment Data Specs
 
 Part of your responsibility will be to build out robust tests both for models and for requests.

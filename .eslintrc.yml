@@ -5,6 +5,10 @@ env:
 extends:
   - plugin:react/recommended
   - standard
+settings:
+  react:
+    version:
+      detect
 overrides: []
 parserOptions:
   ecmaVersion: latest
@@ -23,4 +27,6 @@ rules:
   react/prop-types:
     - off
   react/react-in-jsx-scope:
+    - off
+  no-unused-vars:
     - off

@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ "*" ]
 jobs:
-  test:
+  rspec-test:
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -42,7 +42,7 @@ jobs:
         run: yarn
       - name: Run jest tests
         run: yarn test
-  eslint:
+  react-lint-eslint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -51,7 +51,7 @@ jobs:
         run: yarn
       - name: React lint - eslint
         run: yarn eslint .
-  standardrb:
+  rails-lint-standardrb:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -62,4 +62,4 @@ jobs:
           bundler-cache: true
       # Add or replace any other lints here
       - name: Rails lint - standardrb
-        run: standardrb
+        run: bundle exec standardrb
