@@ -165,7 +165,21 @@ To run the existing testing suite, run:
 
 ```bash
 yarn test
-rspec spec/
+rspec spec
+```
+
+## 🧹 Linting
+
+To run the linter and find errors in React, run:
+
+```bash
+yarn eslint .
+```
+
+To run the linter and find errors in Rails, run:
+
+```bash
+standardrb
 ```
 
 ### Apartment Data Specs
