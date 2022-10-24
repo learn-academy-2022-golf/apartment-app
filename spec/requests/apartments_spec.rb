@@ -1,9 +1,9 @@
-require "rails_helper"
+# require "rails_helper"
 
-RSpec.describe "Apartments", type: :request do
-  let(:user) do
-    User.create email: "test@example.com", password: "password", password_confirmation: "password"
-  end
+# RSpec.describe "Apartments", type: :request do
+#   let(:user) do
+#     User.create email: "test@example.com", password: "password", password_confirmation: "password"
+#   end
 
   # -----index-----
   # describe "GET /index" do
@@ -34,4 +34,4 @@ RSpec.describe "Apartments", type: :request do
       # expect(apartment["email"]).to eq "hudson@example.com"
     # end
   # end
-end
+# end
