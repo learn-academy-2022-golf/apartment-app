@@ -165,7 +165,7 @@ To run the existing testing suite, run:
 
 ```bash
 yarn test
-rspec spec/
+rspec spec
 ```
 
 ## 🧹 Linting
