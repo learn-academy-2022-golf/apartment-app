@@ -168,20 +168,36 @@ yarn test
 rspec spec
 ```
 
-## 🧹 Linting
-
-To run the linter and find errors in React, run:
-
-```bash
-yarn eslint .
+**The following code will not work but is here to get your started**
+```ruby
+require 'rails_helper'
+RSpec.describe "Apartments", type: :request do
+  describe "GET /index" do
+    it "gets a list of apartments " do
+    
+      user = User.where(email: 'test@test.test').first_or_create?(password: '12345678', password_confirmation: '12345678')
+      user.create_apartment!(
+        street: string,
+        city:string,
+        state:string,
+        manager:string,
+        email:string, 
+        price:string, 
+        bedrooms:integer, 
+        bathrooms:integer, 
+        pets:string,
+        image:text, 
+        user_id:integer
+      )
+      # Make a request
+      get '/apartments'
+      apartments = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      expect(apartment.length).to eq 1
+    end
+  end
+end
 ```
-
-To run the linter and find errors in Rails, run:
-
-```bash
-standardrb
-```
-
 ### Apartment Data Specs
 
 Part of your responsibility will be to build out robust tests both for models and for requests.
